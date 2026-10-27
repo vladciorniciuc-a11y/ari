@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="ro" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARI — Active Resilience Initiative | Pregătire Civilă & Apărare Comunitară</title>
+  <meta name="description" content="Inițiativă privată non-profit de educație practică pentru populația civilă: prim ajutor tactic (TECC), siguranță în poligon autorizat, supraviețuire 72h și reziliență informațională.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              orange: '#FF5500',
+              amber: '#FF9900',
+              dark: '#080A0D',
+              card: '#0F1318',
+              border: '#1F2630',
+              accent: '#00E599',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+            tactical: ['"Chakra Petch"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- GSAP & ScrollTrigger for Scroll Controlled Experience -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-brand-dark text-slate-200 font-sans antialiased selection:bg-brand-orange selection:text-white relative overflow-x-hidden">
+
+  <!-- ================= TOP STATUS BAR & HEADER ================= -->
+  <div class="bg-black/60 border-b border-brand-border/60 py-1.5 px-4 text-xs font-mono text-slate-400 backdrop-blur z-50 sticky top-0">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center gap-1.5 text-brand-accent">
+          <span class="w-2 h-2 rounded-full bg-brand-accent animate-ping"></span>
+          <span>INITIATIVE ACTIVE</span>
+        </span>
+        <span class="hidden sm:inline text-slate-600">|</span>
+        <span class="hidden sm:inline text-slate-400">Ediții gratuite pentru cetățeni & forțe de ordine</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <!-- Separate Institutional Channel (Email) -->
+        <a href="mailto:contact@ariromania.ro?subject=Solicitare%20Parteneriat%20Instituțional%20ARI" class="flex items-center gap-1.5 text-slate-300 hover:text-white transition">
+          <i data-lucide="building-2" class="w-3.5 h-3.5 text-brand-amber"></i>
+          <span class="font-medium">Canal Oficial Instituții (Email)</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <header class="sticky top-[33px] bg-brand-dark/90 backdrop-blur-md border-b border-brand-border z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-lg bg-gradient-to-br from-brand-orange to-brand-amber flex items-center justify-center text-black font-tactical font-black text-2xl shadow-lg shadow-brand-orange/20 group-hover:scale-105 transition-transform">
+          ARI
+        </div>
+        <div>
+          <span class="font-tactical font-bold text-lg text-white tracking-wider block leading-tight">ACTIVE RESILIENCE</span>
+          <span class="font-mono text-[10px] text-slate-400 tracking-widest block uppercase">Civil Defense & Tactical Care</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300">
+        <a href="#problema" class="hover:text-brand-orange transition">De Ce Existăm</a>
+        <a href="#echipa" class="hover:text-brand-orange transition">Echipa Noastră</a>
+        <a href="#ce-facem" class="hover:text-brand-orange transition">Module Practice</a>
+        <a href="#vot-sugestii" class="text-brand-accent hover:underline flex items-center gap-1">
+          <span>Propune un Curs</span>
+          <span class="text-[10px] bg-brand-accent/20 text-brand-accent px-1.5 py-0.5 rounded font-mono">NOU</span>
+        </a>
+        <a href="#roadmap" class="hover:text-brand-orange transition">Roadmap 2025-2026</a>
+        <a href="#ghiduri" class="hover:text-brand-orange transition">Ghiduri</a>
+      </nav>
+
+      <!-- Header CTAs -->
+      <div class="flex items-center gap-3">
+        <!-- Direct Fast WhatsApp for Community -->
+        <a href="https://wa.me/40753137728?text=Salut!%20Vreau%20informații%20despre%20următoarea%20ediție%20ARI." target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 bg-[#25D366]/10 text-[#25D366] hover:bg-[#25D366]/20 border border-[#25D366]/30 px-3.5 py-2 rounded-lg text-xs font-mono font-medium transition">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          <span>Comunitate WhatsApp</span>
+        </a>
+
+        <!-- Support CTA -->
+        <a href="#sustine" class="bg-gradient-to-r from-brand-orange to-brand-amber hover:from-orange-600 hover:to-amber-600 text-white font-tactical font-bold text-sm px-5 py-2.5 rounded-lg shadow-lg shadow-brand-orange/20 transition transform hover:-translate-y-0.5">
+          SUSȚINE CU 3.5%
+        </a>
+
+        <!-- Mobile Menu Trigger -->
+        <button id="mobileMenuBtn" aria-label="Deschide meniu mobil" class="lg:hidden p-2 text-slate-300 hover:text-white">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobileDrawer" class="fixed inset-0 bg-black/80 backdrop-blur z-50 hidden transition-opacity">
+    <div class="fixed top-0 right-0 w-80 h-full bg-brand-card p-6 flex flex-col justify-between border-l border-brand-border">
+      <div>
+        <div class="flex justify-between items-center mb-8">
+          <span class="font-tactical font-bold text-white text-lg">MENIU ARI</span>
+          <button id="closeMobileDrawer" class="text-slate-400 hover:text-white p-1">
+            <i data-lucide="x" class="w-6 h-6"></i>
+          </button>
+        </div>
+        <nav class="flex flex-col gap-4 text-base font-medium">
+          <a href="#problema" class="mobile-nav-link text-slate-300 hover:text-brand-orange py-2 border-b border-brand-border/40">De Ce Existăm</a>
+          <a href="#echipa" class="mobile-nav-link text-slate-300 hover:text-brand-orange py-2 border-b border-brand-border/40">Echipa (Cine suntem)</a>
+          <a href="#ce-facem" class="mobile-nav-link text-slate-300 hover:text-brand-orange py-2 border-b border-brand-border/40">Cele 4 Module Practice</a>
+          <a href="#vot-sugestii" class="mobile-nav-link text-brand-accent py-2 border-b border-brand-border/40">Vot & Sugestii Module</a>
+          <a href="#roadmap" class="mobile-nav-link text-slate-300 hover:text-brand-orange py-2 border-b border-brand-border/40">Roadmap Evenimente</a>
+          <a href="#ghiduri" class="mobile-nav-link text-slate-300 hover:text-brand-orange py-2 border-b border-brand-border/40">Ghiduri Practice</a>
+          <a href="#sustine" class="mobile-nav-link text-brand-orange font-bold py-2">Donații & Formular 230</a>
+        </nav>
+      </div>
+      <div class="space-y-3 pt-6 border-t border-brand-border">
+        <a href="https://wa.me/40753137728" target="_blank" class="w-full flex items-center justify-center gap-2 bg-[#25D366] text-black font-bold py-3 rounded-lg text-sm">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          <span>Scrie-ne pe WhatsApp</span>
+        </a>
+        <a href="mailto:contact@ariromania.ro" class="w-full flex items-center justify-center gap-2 bg-brand-border/60 text-slate-300 py-3 rounded-lg text-xs font-mono">
+          <i data-lucide="mail" class="w-4 h-4"></i>
+          <span>contact@ariromania.ro</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= HERO WITH SCROLL-CONTROLLED SIMULATION CANVAS ================= -->
+  <section id="hero" class="relative w-full min-h-[300vh] bg-black">
+    <!-- Sticky Pinned Stage -->
+    <div id="videoScrubContainer" class="sticky top-0 w-full h-screen overflow-hidden flex items-center justify-center">
+      
+      <!-- HTML5 Canvas that scrubs through dynamic cinematic tactical scenarios -->
+      <canvas id="scrubCanvas" class="absolute inset-0 w-full h-full object-cover z-0"></canvas>
+
+      <!-- Vignette and Tactical Overlays -->
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-brand-dark/80 z-10 pointer-events-none"></div>
+      <div class="absolute inset-0 bg-radial-gradient z-10 pointer-events-none opacity-40"></div>
+
+      <!-- Tactical HUD Overlay Elements -->
+      <div class="absolute top-8 left-8 z-20 font-mono text-[11px] text-brand-orange/80 space-y-1 pointer-events-none hidden sm:block">
+        <div>[SYS] ACTIVE RESILIENCE PROTOCOL v2.6</div>
+        <div>[LOC] 46.567° N, 26.914° E (RO)</div>
+        <div>[STATUS] SIMULATION ACTIVE // CITIZEN LEVEL</div>
+      </div>
+      <div class="absolute top-8 right-8 z-20 font-mono text-[11px] text-slate-400 space-y-1 text-right pointer-events-none hidden sm:block">
+        <div>STOP THE BLEED // TECC STANDARD</div>
+        <div id="scrubProgressLabel" class="text-brand-accent">SCROLL: 0%</div>
+      </div>
+
+      <!-- Scrollytelling Dynamic Captions Container -->
+      <div class="relative z-20 max-w-4xl mx-auto px-6 text-center pointer-events-none">
+        
+        <!-- Frame 1 -->
+        <div id="heroText1" class="hero-step opacity-100">
+          <span class="inline-block px-3 py-1 bg-brand-orange/20 border border-brand-orange/40 text-brand-orange text-xs font-mono uppercase tracking-widest rounded-full mb-4">
+            Realitatea de la care plecăm
+          </span>
+          <h1 class="font-tactical font-black text-4xl sm:text-6xl lg:text-7xl text-white tracking-tight leading-none uppercase drop-shadow-2xl">
+            În criză, <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-orange-400 to-amber-300">panica</span> costă vieți.
+          </h1>
+          <p class="mt-6 text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">
+            În primele 72 de ore ale unui dezastru sau accident major, echipajele de stat nu pot ajunge instant peste tot. Primul salvator ești tu sau vecinul tău.
+          </p>
+        </div>
+
+        <!-- Frame 2 -->
+        <div id="heroText2" class="hero-step opacity-0 hidden">
+          <span class="inline-block px-3 py-1 bg-red-500/20 border border-red-500/40 text-red-400 text-xs font-mono uppercase tracking-widest rounded-full mb-4">
+            Comparația Directă
+          </span>
+          <h2 class="font-tactical font-black text-4xl sm:text-6xl text-white tracking-tight uppercase">
+            România <span class="text-red-400">vs</span> Țările Nordice
+          </h2>
+          <p class="mt-6 text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">
+            În Finlanda și Elveția, peste 70% din populație știe să pună un garou și are provizii pentru 3 zile. La noi, cultura apărării civile a fost lăsată pe planul doi.
+          </p>
+        </div>
+
+        <!-- Frame 3 -->
+        <div id="heroText3" class="hero-step opacity-0 hidden">
+          <span class="inline-block px-3 py-1 bg-brand-accent/20 border border-brand-accent/40 text-brand-accent text-xs font-mono uppercase tracking-widest rounded-full mb-4">
+            Misiunea Noastră
+          </span>
+          <h2 class="font-tactical font-black text-4xl sm:text-6xl text-white tracking-tight uppercase">
+            Nu teorie sterilă. <span class="text-brand-accent">Antrenament aplicat.</span>
+          </h2>
+          <p class="mt-6 text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">
+            Prim ajutor tactic (TECC), orientare fără GPS, siguranță în poligon autorizat și luare de decizii sub stres extrem.
+          </p>
+        </div>
+
+        <!-- Frame 4 (Final CTA Frame) -->
+        <div id="heroText4" class="hero-step opacity-0 hidden pointer-events-auto">
+          <span class="inline-block px-3 py-1 bg-amber-400/20 border border-amber-400/40 text-amber-400 text-xs font-mono uppercase tracking-widest rounded-full mb-4">
+            Acces 100% Gratuit Pentru Oameni
+          </span>
+          <h2 class="font-tactical font-black text-3xl sm:text-5xl text-white tracking-tight uppercase">
+            Transformăm civilii în <br class="hidden sm:inline"><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-amber">oameni pregătiți</span>
+          </h2>
+          <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="#ce-facem" class="w-full sm:w-auto px-7 py-3.5 bg-gradient-to-r from-brand-orange to-brand-amber text-white font-tactical font-bold text-base rounded-lg shadow-xl shadow-brand-orange/30 hover:brightness-110 transition">
+              DESCOPERĂ CELE 4 MODULE
+            </a>
+            <a href="#sustine" class="w-full sm:w-auto px-7 py-3.5 bg-brand-card hover:bg-slate-800 border border-brand-border text-white font-tactical font-bold text-base rounded-lg transition">
+              SUSȚINE O SESIUNE CU 3.5%
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Scroll Indicator Pin -->
+      <div class="absolute bottom-8 inset-x-0 mx-auto w-fit z-20 flex flex-col items-center text-xs font-mono text-slate-400 animate-bounce pointer-events-none">
+        <span>DERULEAZĂ PENTRU A DESCOPERI</span>
+        <i data-lucide="chevron-down" class="w-4 h-4 text-brand-orange mt-1"></i>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= THE PROBLEM & NORDIC COMPARISON ================= -->
+  <section id="problema" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-brand-border">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <div class="lg:col-span-6 space-y-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-mono uppercase tracking-wider rounded">
+          <i data-lucide="alert-triangle" class="w-3.5 h-3.5"></i>
+          <span>De Ce Există ARI?</span>
+        </div>
+        <h2 class="font-tactical font-black text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight uppercase leading-tight">
+          Ce faci când <span class="text-red-400">nu răspunde nimeni</span> la 112?
+        </h2>
+        <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+          În caz de cutremur masiv, inundație severă sau colaps al rețelelor energetice, serviciile profesioniste de urgență devin suprasolicitate în primele minute.
+        </p>
+        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+          Modelul țărilor nordice (Finlanda, Norvegia, Estonia) se bazează pe conceptul de <strong class="text-white">„Reziliență Totală”</strong>: statul oferă cadrul, dar populația civilă este prima linie de apărare și salvare. În România, acest gol era imens. Noi am decis să-l umplem prin acțiune practică voluntară.
+        </p>
+        <div class="pt-4 grid grid-cols-2 gap-4">
+          <div class="p-4 rounded-xl bg-brand-card border border-brand-border">
+            <div class="text-3xl font-tactical font-black text-brand-orange">72 ORE</div>
+            <p class="text-xs text-slate-400 mt-1 font-mono">Timpul critic de autonomie comunitară până la sosirea ajutoarelor organizate.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-brand-card border border-brand-border">
+            <div class="text-3xl font-tactical font-black text-brand-accent">&lt; 60 SEC</div>
+            <p class="text-xs text-slate-400 mt-1 font-mono">Timpul maxim în care o hemoragie arterială masivă trebuie oprită cu un garou.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Comparative Infographic Card -->
+      <div class="lg:col-span-6 bg-brand-card border border-brand-border rounded-2xl p-6 sm:p-8 relative overflow-hidden shadow-2xl">
+        <div class="absolute -right-20 -top-20 w-60 h-60 bg-brand-orange/10 rounded-full blur-3xl pointer-events-none"></div>
+        <h3 class="font-tactical font-bold text-xl text-white mb-6 uppercase tracking-wider flex items-center justify-between border-b border-brand-border pb-4">
+          <span>Realitatea din Teren</span>
+          <span class="text-xs font-mono text-slate-400 font-normal">SITREP 2026</span>
+        </h3>
+        <div class="space-y-5">
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 rounded-lg bg-red-500/20 text-red-400 flex items-center justify-center shrink-0 mt-0.5">
+              <i data-lucide="x" class="w-4 h-4"></i>
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-white uppercase font-tactical">Cursuri teoretice sterile</h4>
+              <p class="text-xs text-slate-400 mt-1">Majoritatea cursurilor de prim ajutor se rezumă la prezentări PowerPoint de 2 ore, fără simulare sub stres real.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 rounded-lg bg-red-500/20 text-red-400 flex items-center justify-center shrink-0 mt-0.5">
+              <i data-lucide="x" class="w-4 h-4"></i>
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-white uppercase font-tactical">Dependență totală de tehnologie</h4>
+              <p class="text-xs text-slate-400 mt-1">Dacă pică rețeaua GSM și GPS-ul, 95% dintre cetățeni nu știu să citească o hartă topografică sau să folosească o busolă.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 rounded-lg bg-brand-accent/20 text-brand-accent flex items-center justify-center shrink-0 mt-0.5">
+              <i data-lucide="check" class="w-4 h-4"></i>
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-white uppercase font-tactical">Răspunsul ARI: Antrenament Aplicat</h4>
+              <p class="text-xs text-slate-400 mt-1">Exerciții non-stop zi/noapte (Brașov 36h), poligon autorizat, garouri reale aplicate în condiții de efort și scenarii tactice de echipă.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CINE SUNTEM: ECHIPA REALĂ DE 4 ================= -->
+  <section id="echipa" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-brand-border">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-brand-orange font-mono text-xs uppercase tracking-widest block mb-2">Transparență &amp; Oameni Reali</span>
+      <h2 class="font-tactical font-black text-3xl sm:text-5xl text-white tracking-tight uppercase">
+        Cine stă în spatele ARI?
+      </h2>
+      <p class="mt-4 text-slate-300 text-base leading-relaxed">
+        Nu suntem o structură de birou și nu pretindem legături pompoase. Suntem <strong class="text-white">4 oameni</strong> cu meserii complementare, care au decis să pună practica pe primul loc.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <!-- Member 1: FOS Specialist (Protected OPSEC) -->
+      <div class="bg-brand-card border border-brand-border hover:border-brand-orange/60 rounded-xl p-6 transition duration-300 group flex flex-col justify-between">
+        <div>
+          <div class="relative w-full h-48 rounded-lg bg-slate-900 border border-slate-800 overflow-hidden mb-5 flex items-center justify-center">
+            <!-- Tactical silhouette representation -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10"></div>
+            <i data-lucide="shield-alert" class="w-20 h-20 text-slate-700 group-hover:text-brand-orange/40 transition"></i>
+            <span class="absolute bottom-3 left-3 z-20 font-mono text-[10px] text-brand-orange bg-black/80 px-2 py-0.5 rounded border border-brand-orange/30">
+              OPSEC COMPLIANT
+            </span>
+          </div>
+          <span class="text-xs font-mono text-brand-orange uppercase">Operații Speciale &amp; TECC</span>
+          <h3 class="font-tactical font-bold text-xl text-white mt-1">Specialist Medicină Tactică</h3>
+          <p class="text-xs text-slate-400 mt-3 leading-relaxed">
+            Instructor cu experiență operativă în unități de elită ale Armatei Române. Responsabil de protocoalele de prim ajutor sub stres (TECC), triaj și anduranță psihologică.
+          </p>
+        </div>
+        <div class="pt-4 mt-6 border-t border-brand-border/60 text-[11px] font-mono text-slate-500">
+          Rol: Coordonator Tactic &amp; Supraviețuire
+        </div>
+      </div>
+
+      <!-- Member 2: Shooting Instructor 1 -->
+      <div class="bg-brand-card border border-brand-border hover:border-brand-orange/60 rounded-xl p-6 transition duration-300 group flex flex-col justify-between">
+        <div>
+          <div class="relative w-full h-48 rounded-lg bg-slate-900 border border-slate-800 overflow-hidden mb-5 flex items-center justify-center">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10"></div>
+            <i data-lucide="crosshair" class="w-20 h-20 text-slate-700 group-hover:text-brand-orange/40 transition"></i>
+            <span class="absolute bottom-3 left-3 z-20 font-mono text-[10px] text-brand-amber bg-black/80 px-2 py-0.5 rounded border border-brand-amber/30">
+              POLIGON AUTORIZAT
+            </span>
+          </div>
+          <span class="text-xs font-mono text-brand-amber uppercase">Instructaj Tir &amp; Siguranță</span>
+          <h3 class="font-tactical font-bold text-xl text-white mt-1">Instructor Principal Tir</h3>
+          <p class="text-xs text-slate-400 mt-3 leading-relaxed">
+            Specialist în manipularea armamentului în deplină legalitate. Responsabil cu insuflarea respectului absolut pentru regulile de siguranță, tir defensiv și precizie sportivă.
+          </p>
+        </div>
+        <div class="pt-4 mt-6 border-t border-brand-border/60 text-[11px] font-mono text-slate-500">
+          Rol: Coordonator Linia de Tragere
+        </div>
+      </div>
+
+      <!-- Member 3: Shooting Instructor 2 -->
+      <div class="bg-brand-card border border-brand-border hover:border-brand-orange/60 rounded-xl p-6 transition duration-300 group flex flex-col justify-between">
+        <div>
+          <div class="relative w-full h-48 rounded-lg bg-slate-900 border border-slate-800 overflow-hidden mb-5 flex items-center justify-center">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10"></div>
+            <i data-lucide="target" class="w-20 h-20 text-slate-700 group-hover:text-brand-orange/40 transition"></i>
+            <span class="absolute bottom-3 left-3 z-20 font-mono text-[10px] text-brand-amber bg-black/80 px-2 py-0.5 rounded border border-brand-amber/30">
+              TEHNICĂ &amp; LEGISLAȚIE
+            </span>
+          </div>
+          <span class="text-xs font-mono text-brand-amber uppercase">Pregătire Tehnică &amp; Balistică</span>
+          <h3 class="font-tactical font-bold text-xl text-white mt-1">Instructor Tir &amp; Dinamică</h3>
+          <p class="text-xs text-slate-400 mt-3 leading-relaxed">
+            Instructor autorizat axat pe demistificarea armelor pentru civili, poziții stabile de tragere, întreținerea echipamentului și cunoașterea legislației naționale a armelor.
+          </p>
+        </div>
+        <div class="pt-4 mt-6 border-t border-brand-border/60 text-[11px] font-mono text-slate-500">
+          Rol: Instruire Civili &amp; Cadre L.E.O.
+        </div>
+      </div>
+
+      <!-- Member 4: Web & Promotion (User) -->
+      <div class="bg-brand-card border border-brand-border hover:border-brand-orange/60 rounded-xl p-6 transition duration-300 group flex flex-col justify-between">
+        <div>
+          <div class="relative w-full h-48 rounded-lg bg-slate-900 border border-slate-800 overflow-hidden mb-5 flex items-center justify-center">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10"></div>
+            <i data-lucide="terminal" class="w-20 h-20 text-slate-700 group-hover:text-brand-orange/40 transition"></i>
+            <span class="absolute bottom-3 left-3 z-20 font-mono text-[10px] text-brand-accent bg-black/80 px-2 py-0.5 rounded border border-brand-accent/30">
+              DIGITAL &amp; COMUNITATE
+            </span>
+          </div>
+          <span class="text-xs font-mono text-brand-accent uppercase">Dezvoltare Web &amp; Promovare</span>
+          <h3 class="font-tactical font-bold text-xl text-white mt-1">Arhitectură Digitală</h3>
+          <p class="text-xs text-slate-400 mt-3 leading-relaxed">
+            Responsabil de platforma online, mecanismele de strângere de fonduri (Formular 230, sponsorizări), comunicarea directă pe WhatsApp și transparența completă a activităților ARI.
+          </p>
+        </div>
+        <div class="pt-4 mt-6 border-t border-brand-border/60 text-[11px] font-mono text-slate-500">
+          Rol: Puntea dintre Experți &amp; Cetățeni
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CE FACEM: CELE 4 MODULE PRACTICE ================= -->
+  <section id="ce-facem" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-brand-border">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+      <div>
+        <span class="text-brand-orange font-mono text-xs uppercase tracking-widest block mb-2">Curriculum Aplicat</span>
+        <h2 class="font-tactical font-black text-3xl sm:text-5xl text-white tracking-tight uppercase">
+          Cele 4 Module ARI
+        </h2>
+        <p class="mt-3 text-slate-400 text-sm sm:text-base max-w-xl">
+          Fiecare modul este proiectat să transforme ezitarea în reflexe sigure, într-un mediu controlat și 100% legal.
+        </p>
+      </div>
+      <div class="text-xs font-mono text-slate-400 bg-brand-card p-3 rounded-lg border border-brand-border inline-flex items-center gap-2">
+        <i data-lucide="info" class="w-4 h-4 text-brand-accent shrink-0"></i>
+        <span>Toate modulele sunt deschise gratuit civililor înscriși.</span>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      
+      <!-- Modul 1 -->
+      <div class="bg-brand-card border border-brand-border rounded-2xl p-7 hover:border-brand-orange/50 transition-all duration-300 relative overflow-hidden group">
+        <div class="w-12 h-12 rounded-xl bg-red-500/20 text-red-400 flex items-center justify-center font-tactical font-black text-xl mb-6">
+          01
+        </div>
+        <h3 class="font-tactical font-bold text-2xl text-white uppercase group-hover:text-brand-orange transition">
+          Medicină Tactică &amp; TECC (Stop the Bleed)
+        </h3>
+        <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+          Protocol practic adaptat după principiile Tactical Emergency Casualty Care. Participanții exersează aplicarea garoului CAT/SOFTT pe ei înșiși și pe coechipieri, pansamente hemostatice compresive, deschiderea căilor respiratorii și evacuarea răniților din zone periculoase.
+        </p>
+        <ul class="mt-5 space-y-2 text-xs font-mono text-slate-400 border-t border-brand-border/60 pt-4">
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-accent"></i> Aplicare garou în &lt; 45 secunde sub efort fizic</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-accent"></i> Împachetarea plăgilor adânci (Wound Packing)</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-accent"></i> Folosirea corectă a trusei individuale de prim ajutor (IFAK)</li>
+        </ul>
+      </div>
+
+      <!-- Modul 2 -->
+      <div class="bg-brand-card border border-brand-border rounded-2xl p-7 hover:border-brand-orange/50 transition-all duration-300 relative overflow-hidden group">
+        <div class="w-12 h-12 rounded-xl bg-brand-orange/20 text-brand-orange flex items-center justify-center font-tactical font-black text-xl mb-6">
+          02
+        </div>
+        <h3 class="font-tactical font-bold text-2xl text-white uppercase group-hover:text-brand-orange transition">
+          Mânuirea în Siguranță &amp; Tir în Poligon
+        </h3>
+        <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+          Desfășurat exclusiv în poligoane autorizate partenere (ex: Poligonul Joița, GunPro Otopeni, Hunting Fun Buhuși). Demistificarea armelor pentru civili, asimilarea reflexivă a celor 4 reguli cardinale de siguranță, tir defensiv de reacție și precizie.
+        </p>
+        <ul class="mt-5 space-y-2 text-xs font-mono text-slate-400 border-t border-brand-border/60 pt-4">
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-accent"></i> Reguli stricte de siguranță pe linia de tragere</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-accent"></i> Încărcare, descărcare și verificarea stării armei</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-accent"></i> Cadru legal: Legea armelor &amp; condițiile uzului de armă</li>
+        </ul>
+      </div>
+
+      <!-- Modul 3 -->
+      <div class="bg-brand-card border border-brand-border rounded-2xl p-7 hover:border-brand-orange/50 transition-all duration-300 relative overflow-hidden group">
+        <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-tactical font-black text-xl mb-6">
+          03
+        </div>
+        <h3 class="font-tactical font-bold text-2xl text-white uppercase group-hover:text-brand-orange transition">
+          Supraviețuire 72h &amp; Orientare în Teren
+        </h3>
+        <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+          Testat în regim extins de 36 de ore non-stop (zi și noapte în zona montană Brașov). Navigație cu hartă topografică militară și busolă când GPS-ul e căzut, gestionarea apei, adăpost de urgență și utilizarea stațiilor radio PMR/VHF.
+        </p>
+        <ul class="mt-5 space-y-2 text-xs font-mono text-slate-400 border-t border-brand-border/60 pt-4">
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-accent"></i> Marș pe azimut și orientare pe timp de noapte</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-accent"></i> Construirea rucsacului de urgență de 72 de ore (Go-Bag)</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-accent"></i> Radiocomunicații de bază în scenarii izolate</li>
+        </ul>
+      </div>
+
+      <!-- Modul 4 -->
+      <div class="bg-brand-card border border-brand-border rounded-2xl p-7 hover:border-brand-orange/50 transition-all duration-300 relative overflow-hidden group">
+        <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center font-tactical font-black text-xl mb-6">
+          04
+        </div>
+        <h3 class="font-tactical font-bold text-2xl text-white uppercase group-hover:text-brand-orange transition">
+          Război Hibrid &amp; Reziliență Informațională
+        </h3>
+        <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+          Dezvoltat în colaborare cu corespondenți de război și jurnaliști de teren (ex. Radu Hossu). Înțelegerea mecanismelor de propagandă, război psihologic, dezinformare în criză și tehnici de protejare a discernământului împotriva panicii colective.
+        </p>
+        <ul class="mt-5 space-y-2 text-xs font-mono text-slate-400 border-t border-brand-border/60 pt-4">
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-accent"></i> Cum verifici sursele înainte de a răspândi o știre</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-accent"></i> Recunoașterea atacurilor informaționale coordonate</li>
+          <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-accent"></i> Comportamentul responsabil în comunități locale și grupuri online</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FORMULAR INTERACTIV: PROPUNERI & VOT MODULE ================= -->
+  <section id="vot-sugestii" class="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+    <div class="bg-gradient-to-b from-brand-card to-slate-950 border-2 border-brand-accent/40 rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+      
+      <div class="absolute -top-24 -right-24 w-72 h-72 bg-brand-accent/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-2xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand-accent/20 border border-brand-accent/40 text-brand-accent text-xs font-mono uppercase tracking-wider rounded mb-3">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+          <span>Vocea Comunității</span>
+        </div>
+        <h3 class="font-tactical font-black text-2xl sm:text-4xl text-white uppercase tracking-tight">
+          Ce vrei să înveți la următoarea ediție ARI?
+        </h3>
+        <p class="text-slate-300 text-sm sm:text-base mt-2">
+          Construim următoarele ateliere pe baza cererilor voastre reale. Selectează temele care te interesează sau propune una nouă:
+        </p>
+      </div>
+
+      <!-- Interactive Voting & Suggestion Form -->
+      <form id="suggestionForm" class="mt-8 space-y-6">
+        
+        <!-- Step 1: Clickable Topic Tags -->
+        <div>
+          <label class="block text-xs font-mono text-slate-400 uppercase tracking-wider mb-3">
+            1. Selectează subiectele dorite (click pe opțiuni):
+          </label>
+          <div class="flex flex-wrap gap-2.5" id="topicTagsContainer">
+            <button type="button" class="topic-tag px-3.5 py-2 rounded-lg bg-brand-dark border border-brand-border text-xs font-mono text-slate-300 hover:border-brand-accent transition flex items-center gap-2" data-value="Prim ajutor copii & bebelusi">
+              <span>Prim Ajutor Pediatric / Copii</span>
+            </button>
+            <button type="button" class="topic-tag px-3.5 py-2 rounded-lg bg-brand-dark border border-brand-border text-xs font-mono text-slate-300 hover:border-brand-accent transition flex items-center gap-2" data-value="Supravietuire in caz de cutremur in bloc">
+              <span>Cutremur Major: Supraviețuire în Bloc</span>
+            </button>
+            <button type="button" class="topic-tag px-3.5 py-2 rounded-lg bg-brand-dark border border-brand-border text-xs font-mono text-slate-300 hover:border-brand-accent transition flex items-center gap-2" data-value="Comunicatii radio PMR/VHF cand pica GSM">
+              <span>Comunicații Radio fără Rețea GSM</span>
+            </button>
+            <button type="button" class="topic-tag px-3.5 py-2 rounded-lg bg-brand-dark border border-brand-border text-xs font-mono text-slate-300 hover:border-brand-accent transition flex items-center gap-2" data-value="Autoaparare si gestionare panica">
+              <span>Autoapărare &amp; Controlul Panicii</span>
+            </button>
+            <button type="button" class="topic-tag px-3.5 py-2 rounded-lg bg-brand-dark border border-brand-border text-xs font-mono text-slate-300 hover:border-brand-accent transition flex items-center gap-2" data-value="Tir de noapte si luminozitate redusa">
+              <span>Tir în Condiții de Vizibilitate Redusă</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Custom Suggestion Input -->
+        <div>
+          <label for="customTopic" class="block text-xs font-mono text-slate-400 uppercase tracking-wider mb-1.5">
+            Ai altă propunere? Scrie pe scurt:
+          </label>
+          <input type="text" id="customTopic" placeholder="ex: Cum purifici apa pe termen lung, apărare împotriva câinilor..." class="w-full bg-brand-dark border border-brand-border focus:border-brand-accent rounded-lg px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none transition font-sans">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <!-- City Selection -->
+          <div>
+            <label for="citySelect" class="block text-xs font-mono text-slate-400 uppercase tracking-wider mb-1.5">
+              2. În ce oraș / zonă ai vrea să participi?
+            </label>
+            <select id="citySelect" class="w-full bg-brand-dark border border-brand-border focus:border-brand-accent rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none transition font-sans">
+              <option value="Bacau">Bacău &amp; Regiunea Moldovei</option>
+              <option value="Bucuresti">București &amp; Ilfov</option>
+              <option value="Brasov">Brașov &amp; Zona Centrală</option>
+              <option value="Alt Oras">Alt oraș (menționează la contact)</option>
+            </select>
+          </div>
+
+          <!-- Notification Channel (WhatsApp preferred for community) -->
+          <div>
+            <label for="userContact" class="block text-xs font-mono text-slate-400 uppercase tracking-wider mb-1.5">
+              3. WhatsApp sau E-mail (pentru alertă înscrieri):
+            </label>
+            <input type="text" id="userContact" required placeholder="07xx xxx xxx sau email@exemplu.ro" class="w-full bg-brand-dark border border-brand-border focus:border-brand-accent rounded-lg px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none transition font-sans">
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p class="text-xs text-slate-400 font-mono">
+            * Te vom contacta pe WhatsApp/Email doar când se organizează un modul corespunzător. Zero spam.
+          </p>
+          <button type="submit" class="w-full sm:w-auto px-8 py-3.5 bg-brand-accent hover:bg-emerald-400 text-black font-tactical font-black text-sm uppercase rounded-lg shadow-lg shadow-brand-accent/20 transition transform hover:-translate-y-0.5">
+            Trimite Propunerea
+          </button>
+        </div>
+
+        <!-- Success Feedback Message -->
+        <div id="formSuccessMessage" class="hidden p-4 rounded-xl bg-brand-accent/15 border border-brand-accent text-brand-accent text-sm font-mono flex items-center gap-3">
+          <i data-lucide="check-circle-2" class="w-5 h-5 shrink-0"></i>
+          <span>Propunerea ta a fost înregistrată! Instructorii ARI vor include această temă pe radarul viitoarelor ediții.</span>
+        </div>
+
+      </form>
+
+    </div>
+  </section>
+
+  <!-- ================= ROADMAP INTERACTIV (2025 - 2026) ================= -->
+  <section id="roadmap" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-brand-border">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-brand-orange font-mono text-xs uppercase tracking-widest block mb-2">Track Record Real</span>
+      <h2 class="font-tactical font-black text-3xl sm:text-5xl text-white tracking-tight uppercase">
+        Roadmap-ul Proiectelor ARI
+      </h2>
+      <p class="mt-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+        Înainte de a cere sprijin financiar, am demonstrat pe teren capacitatea de organizare. Dă click pe oricare eveniment pentru a deschide raportul detaliat.
+      </p>
+    </div>
+
+    <!-- Timeline Grid with Interactive Modals -->
+    <div class="relative border-l-2 border-brand-border/60 ml-4 md:ml-32 space-y-12">
+      
+      <!-- Event 1: Buhusi -->
+      <div class="relative pl-8 md:pl-12 group cursor-pointer event-card" data-event-id="buhusi">
+        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-brand-orange border-4 border-brand-dark group-hover:scale-125 transition"></div>
+        <div class="bg-brand-card hover:bg-slate-900 border border-brand-border group-hover:border-brand-orange/60 p-6 rounded-xl transition duration-300">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <span class="font-mono text-xs text-brand-orange">7 Iunie 2025 // Poligon Hunting Fun, Buhuși</span>
+            <span class="px-2 py-0.5 rounded bg-brand-border text-[10px] font-mono text-slate-300">~100 PARTICIPANȚI</span>
+          </div>
+          <h3 class="font-tactical font-bold text-xl text-white group-hover:text-brand-orange transition">
+            Ediția I — Buhuși (Proiectul Pilot)
+          </h3>
+          <p class="text-xs text-slate-400 mt-2 line-clamp-2">
+            Primul eveniment practic dedicat rezilienței comunitare: prim ajutor, hartă și busolă, lucru în echipă și verificarea surselor împotriva dezinformării.
+          </p>
+          <div class="mt-4 flex items-center gap-1.5 text-xs font-mono text-brand-orange">
+            <span>Apasă pentru raport complet &amp; foto</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event 2: Joita -->
+      <div class="relative pl-8 md:pl-12 group cursor-pointer event-card" data-event-id="joita">
+        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-brand-orange border-4 border-brand-dark group-hover:scale-125 transition"></div>
+        <div class="bg-brand-card hover:bg-slate-900 border border-brand-border group-hover:border-brand-orange/60 p-6 rounded-xl transition duration-300">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <span class="font-mono text-xs text-brand-orange">Iulie 2025 // Poligonul Joița</span>
+            <span class="px-2 py-0.5 rounded bg-brand-border text-[10px] font-mono text-slate-300">SCENARII DE ECHIPĂ</span>
+          </div>
+          <h3 class="font-tactical font-bold text-xl text-white group-hover:text-brand-orange transition">
+            Ediția a II-a — Joița (Decizii în Criză)
+          </h3>
+          <p class="text-xs text-slate-400 mt-2 line-clamp-2">
+            Exersarea luării deciziilor în condiții de timp și resurse limitate. Reacție inițială în mediu izolat și coordonare pe teren.
+          </p>
+          <div class="mt-4 flex items-center gap-1.5 text-xs font-mono text-brand-orange">
+            <span>Apasă pentru raport complet</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event 3: Dezinformare -->
+      <div class="relative pl-8 md:pl-12 group cursor-pointer event-card" data-event-id="info-war">
+        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-brand-orange border-4 border-brand-dark group-hover:scale-125 transition"></div>
+        <div class="bg-brand-card hover:bg-slate-900 border border-brand-border group-hover:border-brand-orange/60 p-6 rounded-xl transition duration-300">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <span class="font-mono text-xs text-brand-orange">Septembrie 2025 // Poligonul Joița</span>
+            <span class="px-2 py-0.5 rounded bg-brand-border text-[10px] font-mono text-slate-300">RĂZBOI HIBRID</span>
+          </div>
+          <h3 class="font-tactical font-bold text-xl text-white group-hover:text-brand-orange transition">
+            Ediția a III-a — Reziliență Informațională
+          </h3>
+          <p class="text-xs text-slate-400 mt-2 line-clamp-2">
+            Combaterea manipulării online, înțelegerea modului în care panica slăbește comunitățile și verificarea surselor primare.
+          </p>
+          <div class="mt-4 flex items-center gap-1.5 text-xs font-mono text-brand-orange">
+            <span>Apasă pentru raport complet</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event 4: Brasov 36h -->
+      <div class="relative pl-8 md:pl-12 group cursor-pointer event-card" data-event-id="brasov">
+        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-brand-orange border-4 border-brand-dark group-hover:scale-125 transition"></div>
+        <div class="bg-brand-card hover:bg-slate-900 border border-brand-border group-hover:border-brand-orange/60 p-6 rounded-xl transition duration-300">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <span class="font-mono text-xs text-brand-orange">Decembrie 2025 // Zona Montană Brașov</span>
+            <span class="px-2 py-0.5 rounded bg-brand-accent/20 text-brand-accent font-mono text-[10px]">36 ORE NON-STOP ZI/NOAPTE</span>
+          </div>
+          <h3 class="font-tactical font-bold text-xl text-white group-hover:text-brand-orange transition">
+            Ediția a IV-a — Brașov (Anduranță &amp; Noapte)
+          </h3>
+          <p class="text-xs text-slate-400 mt-2 line-clamp-2">
+            Format extins de 36 de ore cu deplasare pe trasee necunoscute, luare de decizii sub privare de somn și condiții de iarnă.
+          </p>
+          <div class="mt-4 flex items-center gap-1.5 text-xs font-mono text-brand-orange">
+            <span>Apasă pentru raport complet</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event 5: Infiintare Oficiala -->
+      <div class="relative pl-8 md:pl-12 group cursor-pointer event-card" data-event-id="asociatie">
+        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-brand-accent border-4 border-brand-dark group-hover:scale-125 transition"></div>
+        <div class="bg-brand-card hover:bg-slate-900 border border-brand-border group-hover:border-brand-accent/60 p-6 rounded-xl transition duration-300">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <span class="font-mono text-xs text-brand-accent">18 Martie 2026 // Bacău</span>
+            <span class="px-2 py-0.5 rounded bg-brand-accent/20 text-brand-accent font-mono text-[10px]">STATUT JURIDIC</span>
+          </div>
+          <h3 class="font-tactical font-bold text-xl text-white group-hover:text-brand-accent transition">
+            Constituirea Asociației Active Resilience Initiative
+          </h3>
+          <p class="text-xs text-slate-400 mt-2 line-clamp-2">
+            Trecerea de la grup de inițiativă la asociație non-profit oficială, capabilă să atragă sponsorizări, parteneriate și formulare 230.
+          </p>
+          <div class="mt-4 flex items-center gap-1.5 text-xs font-mono text-brand-accent">
+            <span>Apasă pentru documente statutare</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event 6: BSDA 2026 -->
+      <div class="relative pl-8 md:pl-12 group cursor-pointer event-card" data-event-id="bsda">
+        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-brand-amber border-4 border-brand-dark group-hover:scale-125 transition"></div>
+        <div class="bg-brand-card hover:bg-slate-900 border border-brand-border group-hover:border-brand-amber/60 p-6 rounded-xl transition duration-300">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <span class="font-mono text-xs text-brand-amber">13–15 Mai 2026 // ROMAERO Băneasa, București</span>
+            <span class="px-2 py-0.5 rounded bg-brand-border text-[10px] font-mono text-slate-300">EXPOZIȚIE &amp; APĂRARE</span>
+          </div>
+          <h3 class="font-tactical font-bold text-xl text-white group-hover:text-brand-amber transition">
+            Participarea la BSDA 2026
+          </h3>
+          <p class="text-xs text-slate-400 mt-2 line-clamp-2">
+            Stand propriu de prezentare la Black Sea Defense &amp; Aerospace, promovând modelul de pregătire civilă în fața specialiștilor din industrie.
+          </p>
+          <div class="mt-4 flex items-center gap-1.5 text-xs font-mono text-brand-amber">
+            <span>Apasă pentru detalii stand</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event 7: Law Enforcement Only -->
+      <div class="relative pl-8 md:pl-12 group cursor-pointer event-card" data-event-id="leo">
+        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-brand-orange border-4 border-brand-dark group-hover:scale-125 transition"></div>
+        <div class="bg-brand-card hover:bg-slate-900 border border-brand-border group-hover:border-brand-orange/60 p-6 rounded-xl transition duration-300">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <span class="font-mono text-xs text-brand-orange">25 Iulie 2026 // GunPro Shooting Range, Otopeni</span>
+            <span class="px-2 py-0.5 rounded bg-brand-orange/20 text-brand-orange font-mono text-[10px]">EXCLUSIV CADRE S.N.A.O.P.S.N.</span>
+          </div>
+          <h3 class="font-tactical font-bold text-xl text-white group-hover:text-brand-orange transition">
+            LAW ENFORCEMENT ONLY 2026 (Gratuit pentru 40 Cadre)
+          </h3>
+          <p class="text-xs text-slate-400 mt-2 line-clamp-2">
+            Eveniment dedicat exclusiv militarilor și polițiștilor: 50 cartușe gratuite, prim ajutor TECC, seminar juridic uz de armă (av. Adrian Zamfir) și autoapărare împotriva cuțitului (Pontica).
+          </p>
+          <div class="mt-4 flex items-center gap-1.5 text-xs font-mono text-brand-orange">
+            <span>Apasă pentru raport complet &amp; parteneri</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CENTRUL DE CUNOȘTINȚE: GHIDURI PRACTICE ================= -->
+  <section id="ghiduri" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-brand-border">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-brand-accent font-mono text-xs uppercase tracking-widest block mb-2">Micro-Knowledge Hub</span>
+      <h2 class="font-tactical font-black text-3xl sm:text-5xl text-white tracking-tight uppercase">
+        Ghiduri Practice de Reziliență
+      </h2>
+      <p class="mt-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+        Învață acum gratuit deprinderi fundamentale de salvare. Citește rezumatul sau deschide ghidul pas cu pas.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- Guide 1: Tourniquet -->
+      <div class="bg-brand-card border border-brand-border hover:border-brand-accent/50 rounded-2xl p-6 transition duration-300 flex flex-col justify-between group">
+        <div>
+          <div class="w-10 h-10 rounded-lg bg-red-500/20 text-red-400 flex items-center justify-center mb-4">
+            <i data-lucide="activity" class="w-5 h-5"></i>
+          </div>
+          <span class="text-[11px] font-mono text-red-400 uppercase">STOP THE BLEED</span>
+          <h3 class="font-tactical font-bold text-xl text-white mt-1 group-hover:text-brand-accent transition">
+            Cum aplici un garou (CAT) în sub 60 secunde
+          </h3>
+          <p class="text-xs text-slate-400 mt-3 leading-relaxed">
+            Hemoragia masivă este principala cauză de deces prevenibil în traumă. Învață plasarea la 5-7 cm deasupra plăgii, strângerea barei de torsiune și notarea orei.
+          </p>
+        </div>
+        <button class="open-guide-btn mt-6 w-full py-2.5 bg-brand-dark hover:bg-slate-800 border border-brand-border text-xs font-mono text-brand-accent rounded-lg flex items-center justify-center gap-2 transition" data-guide-id="garou">
+          <span>Deschide Protocolul Pas-cu-Pas</span>
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        </button>
+      </div>
+
+      <!-- Guide 2: 72h Bug-Out Bag -->
+      <div class="bg-brand-card border border-brand-border hover:border-brand-accent/50 rounded-2xl p-6 transition duration-300 flex flex-col justify-between group">
+        <div>
+          <div class="w-10 h-10 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center mb-4">
+            <i data-lucide="backpack" class="w-5 h-5"></i>
+          </div>
+          <span class="text-[11px] font-mono text-amber-400 uppercase">AUTONOMIE CRITICĂ</span>
+          <h3 class="font-tactical font-bold text-xl text-white mt-1 group-hover:text-brand-accent transition">
+            Checklist: Rucsacul de Evacuare pentru 72h
+          </h3>
+          <p class="text-xs text-slate-400 mt-3 leading-relaxed">
+            Ce pui concret într-un Go-Bag de familie: rația de apă (2L/om/zi), filtrare, hrană calorică neperisabilă, trusă traumă, radio manivelă și documente laminate.
+          </p>
+        </div>
+        <button class="open-guide-btn mt-6 w-full py-2.5 bg-brand-dark hover:bg-slate-800 border border-brand-border text-xs font-mono text-brand-accent rounded-lg flex items-center justify-center gap-2 transition" data-guide-id="rucsac72">
+          <span>Vezi Lista Completă de Obiecte</span>
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        </button>
+      </div>
+
+      <!-- Guide 3: Firearms Safety -->
+      <div class="bg-brand-card border border-brand-border hover:border-brand-accent/50 rounded-2xl p-6 transition duration-300 flex flex-col justify-between group">
+        <div>
+          <div class="w-10 h-10 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center mb-4">
+            <i data-lucide="shield-check" class="w-5 h-5"></i>
+          </div>
+          <span class="text-[11px] font-mono text-blue-400 uppercase">SIGURANȚĂ ABSOLUTĂ</span>
+          <h3 class="font-tactical font-bold text-xl text-white mt-1 group-hover:text-brand-accent transition">
+            Cele 4 Reguli Cardinale ale Armamentului
+          </h3>
+          <p class="text-xs text-slate-400 mt-3 leading-relaxed">
+            Fiecare armă este considerată încărcată. Țeava orientată doar spre ținte sigure. Degetul în afara gărzii trăgaciului. Cunoașterea a ceea ce se află în spatele țintei.
+          </p>
+        </div>
+        <button class="open-guide-btn mt-6 w-full py-2.5 bg-brand-dark hover:bg-slate-800 border border-brand-border text-xs font-mono text-brand-accent rounded-lg flex items-center justify-center gap-2 transition" data-guide-id="reguli-arme">
+          <span>Citește Ghidul de Siguranță</span>
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= ATRAGERE FONDURI (3.5% / COMPANII 20% / DONAȚII) ================= -->
+  <section id="sustine" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-brand-border">
+    <div class="bg-gradient-to-br from-brand-card via-slate-900 to-black border-2 border-brand-orange/40 rounded-3xl p-8 sm:p-14 shadow-2xl relative overflow-hidden">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-brand-orange font-mono text-xs uppercase tracking-widest block mb-2">Transparență Financiară</span>
+        <h2 class="font-tactical font-black text-3xl sm:text-5xl text-white tracking-tight uppercase">
+          Modulele sunt gratuite. <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-amber">Consumabilele costă bani.</span>
+        </h2>
+        <p class="mt-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+          Instructorii noștri își oferă timpul pro-bono. Însă garourile de antrenament, pansamentele hemostatice, chiria poligoanelor și muniția se consumă la fiecare curs.
+        </p>
+      </div>
+
+      <!-- Donation Option Switcher Tabs -->
+      <div class="flex justify-center mb-10">
+        <div class="inline-flex p-1.5 rounded-xl bg-brand-dark border border-brand-border text-xs sm:text-sm font-mono">
+          <button id="tab230Btn" class="px-5 py-2 rounded-lg font-bold bg-brand-orange text-white transition">
+            1. Formularul 230 (3.5% din Impozit)
+          </button>
+          <button id="tabCorporateBtn" class="px-5 py-2 rounded-lg text-slate-400 hover:text-white transition">
+            2. Companii (20% Impozit Profit)
+          </button>
+          <button id="tabDirectBtn" class="px-5 py-2 rounded-lg text-slate-400 hover:text-white transition">
+            3. Donație Directă (IBAN Libra)
+          </button>
+        </div>
+      </div>
+
+      <!-- Tab 1: Formular 230 Content -->
+      <div id="tab230Content" class="space-y-8 max-w-3xl mx-auto">
+        <div class="bg-brand-dark/80 border border-brand-border p-6 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div class="space-y-2 text-center sm:text-left">
+            <h4 class="font-tactical font-bold text-xl text-white">Redirecționează 3.5% din impozitul tău pe venit</h4>
+            <p class="text-xs text-slate-400">
+              Nu te costă niciun leu. Sunt bani pe care statul îi oprește oricum din salariu. Prin acest gest echipezi un cetățean cu deprinderi salvatoare.
+            </p>
+          </div>
+          <a href="https://formular230.ro" target="_blank" rel="noopener noreferrer" class="shrink-0 px-7 py-3.5 bg-brand-orange hover:bg-orange-600 text-white font-tactical font-bold text-sm uppercase rounded-lg shadow-lg shadow-brand-orange/30 transition flex items-center gap-2">
+            <span>Completează Online 230</span>
+            <i data-lucide="file-text" class="w-4 h-4"></i>
+          </a>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center font-mono text-xs text-slate-400">
+          <div class="p-3 bg-brand-dark/40 rounded-lg border border-brand-border/40">
+            <span class="text-brand-orange block font-bold mb-1">0 LEI</span>
+            Cost pentru tine
+          </div>
+          <div class="p-3 bg-brand-dark/40 rounded-lg border border-brand-border/40">
+            <span class="text-brand-accent block font-bold mb-1">2 MINUTE</span>
+            Completare digitală
+          </div>
+          <div class="p-3 bg-brand-dark/40 rounded-lg border border-brand-border/40">
+            <span class="text-brand-amber block font-bold mb-1">100% IMPACT</span>
+            Merge direct în echipamente
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 2: Corporate 20% Content (Hidden by default) -->
+      <div id="tabCorporateContent" class="hidden space-y-8 max-w-3xl mx-auto">
+        <div class="bg-brand-dark/80 border border-brand-border p-6 rounded-2xl space-y-4">
+          <h4 class="font-tactical font-bold text-xl text-white">Sponsorizează ARI din cei 20% impozit pe profit / venit</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Conform Codului Fiscal, firmele pot redirecționa până la 20% din impozitul pe profit datorat statului către un ONG înregistrat în Registrul entităților/unităților de cult. Banii rămân în comunitate pentru pregătire civilă.
+          </p>
+          <div class="p-4 bg-black/60 rounded-xl border border-brand-border/60 text-xs font-mono space-y-2">
+            <div class="text-brand-amber font-bold">PACHET TEAMPARTNER ARI:</div>
+            <p class="text-slate-300">
+              Pentru companiile partenere, instructorii ARI pot susține sesiuni private de prim ajutor de urgență (Stop the Bleed) și teambuilding de reziliență pentru angajați.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-4 pt-2">
+            <!-- Formal Channel: Email -->
+            <a href="mailto:contact@ariromania.ro?subject=Contract%20Sponsorizare%20Companie%20ARI" class="px-6 py-3 bg-brand-amber hover:bg-amber-600 text-black font-tactical font-bold text-sm uppercase rounded-lg transition flex items-center gap-2">
+              <i data-lucide="mail" class="w-4 h-4"></i>
+              <span>Cere Contractul pe Email (contact@ariromania.ro)</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 3: Direct Donation / Bank Info (Hidden by default) -->
+      <div id="tabDirectContent" class="hidden space-y-6 max-w-3xl mx-auto">
+        <div class="bg-brand-dark/80 border border-brand-border p-6 rounded-2xl space-y-4">
+          <div class="flex items-center justify-between border-b border-brand-border pb-3">
+            <span class="font-mono text-xs text-slate-400">BENEFICIAR</span>
+            <span class="font-tactical font-bold text-white">Asociația Active Resilience Initiative</span>
+          </div>
+          <div class="flex items-center justify-between border-b border-brand-border pb-3">
+            <span class="font-mono text-xs text-slate-400">BANCA</span>
+            <span class="font-mono text-sm text-white">Libra Internet Bank</span>
+          </div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-black/80 p-4 rounded-xl border border-brand-orange/40">
+            <div>
+              <span class="font-mono text-[10px] text-brand-orange block uppercase tracking-wider">CONT IBAN RON</span>
+              <span id="ibanText" class="font-mono text-sm sm:text-base font-bold text-white tracking-wider">RO89BREL0002005371400100</span>
+            </div>
+            <button id="copyIbanBtn" class="px-4 py-2 bg-brand-orange hover:bg-orange-600 text-white rounded font-mono text-xs font-bold transition flex items-center gap-1.5 self-start sm:self-auto">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span id="copyBtnLabel">Copiază IBAN</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER CU CANALE DIFERENȚIATE ================= -->
+  <footer class="bg-black border-t border-brand-border py-16 px-4 sm:px-6 lg:px-8 text-xs font-mono text-slate-400">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+      
+      <!-- Brand & Mission -->
+      <div class="space-y-4 md:col-span-1">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded bg-brand-orange flex items-center justify-center font-tactical font-black text-black text-lg">
+            A
+          </div>
+          <span class="font-tactical font-bold text-white text-base">ACTIVE RESILIENCE</span>
+        </div>
+        <p class="text-slate-400 text-xs leading-relaxed font-sans">
+          Asociația Active Resilience Initiative (ARI) este o organizație non-profit dedicată pregătirii populației civile pentru reacție responsabilă în caz de criză.
+        </p>
+        <div class="text-[11px] text-slate-500">
+          CIF / Înreg. Bacău, România
+        </div>
+      </div>
+
+      <!-- Canale de Contact Diferențiate (Public vs Institutii) -->
+      <div class="space-y-3">
+        <h5 class="text-white font-tactical font-bold uppercase text-sm tracking-wider">Contact Direct</h5>
+        
+        <!-- Public: WhatsApp -->
+        <div class="p-3 rounded-lg bg-brand-card border border-[#25D366]/30">
+          <span class="text-[10px] text-[#25D366] block font-bold mb-1">COMUNITATE &amp; CIVILI (WHATSAPP):</span>
+          <a href="https://wa.me/40753137728" target="_blank" class="text-white hover:text-[#25D366] transition flex items-center gap-1.5">
+            <i data-lucide="message-circle" class="w-3.5 h-3.5 text-[#25D366]"></i>
+            <span>+40 753 137 728</span>
+          </a>
+        </div>
+
+        <!-- Institutii: Email Oficial -->
+        <div class="p-3 rounded-lg bg-brand-card border border-brand-amber/30">
+          <span class="text-[10px] text-brand-amber block font-bold mb-1">INSTITUȚII &amp; SPONSORIZĂRI (EMAIL):</span>
+          <a href="mailto:contact@ariromania.ro" class="text-white hover:text-brand-amber transition flex items-center gap-1.5">
+            <i data-lucide="mail" class="w-3.5 h-3.5 text-brand-amber"></i>
+            <span>contact@ariromania.ro</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Locații & Sediul -->
+      <div class="space-y-2">
+        <h5 class="text-white font-tactical font-bold uppercase text-sm tracking-wider">Sediul Asociației</h5>
+        <p class="text-slate-400 leading-relaxed font-sans text-xs">
+          Calea Moldovei nr. 100<br>
+          Bacău, România
+        </p>
+        <p class="text-slate-500 text-[11px] pt-2">
+          Atelierele practice se desfășoară în poligoane autorizate și teren montan (Bacău, Joița, Brașov, Otopeni).
+        </p>
+      </div>
+
+      <!-- Parteneri confirmați din teren -->
+      <div class="space-y-2">
+        <h5 class="text-white font-tactical font-bold uppercase text-sm tracking-wider">Parteneri Poligoane &amp; Tehnic</h5>
+        <ul class="space-y-1 text-slate-400 text-xs">
+          <li>• GunPro Shooting Range</li>
+          <li>• Poligonul Joița</li>
+          <li>• Hunting Fun Buhuși</li>
+          <li>• Strategic Defense România</li>
+          <li>• AMZ Law Office</li>
+          <li>• Pontica Selfdefense</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="max-w-7xl mx-auto pt-8 border-t border-brand-border/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px]">
+      <div>
+        © 2026 Asociația Active Resilience Initiative (ARI). Toate drepturile rezervate.
+      </div>
+      <div class="flex gap-4">
+        <a href="https://ariromania.ro/termeni-si-conditii/index.html" class="hover:text-white transition">Termeni</a>
+        <a href="https://ariromania.ro/politica-de-confidentialitate/index.html" class="hover:text-white transition">GDPR</a>
+        <a href="https://ariromania.ro/politica-cookie/index.html" class="hover:text-white transition">Cookies</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= FLOATING WHATSAPP BUTTON (SITE-WIDE FOR COMMUNITY) ================= -->
+  <a href="https://wa.me/40753137728?text=Salut!%20Vreau%20informații%20despre%20evenimentele%20ARI." target="_blank" rel="noopener noreferrer" aria-label="Discută pe WhatsApp cu ARI" class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-[#25D366] text-black flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-transform group">
+    <i data-lucide="message-circle" class="w-7 h-7 fill-black text-black"></i>
+    <!-- Tooltip -->
+    <span class="absolute right-16 bg-black/90 text-white font-mono text-xs px-3 py-1.5 rounded-lg border border-brand-border whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl">
+      Întreabă-ne pe WhatsApp
+    </span>
+  </a>
+
+  <!-- ================= DYNAMIC SLIDE-IN MODAL / DRAWER FOR ROADMAP & GUIDES ================= -->
+  <div id="infoModalOverlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden transition-opacity flex items-center justify-center p-4">
+    <div id="infoModalContent" class="bg-brand-card border border-brand-border w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-2xl p-6 sm:p-8 relative shadow-2xl transform transition-transform">
+      <button id="closeInfoModal" aria-label="Închide fereastra" class="absolute top-5 right-5 text-slate-400 hover:text-white p-1">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+      <div id="modalBody">
+        <!-- Content will be injected dynamically via JS based on event/guide id -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Logic & Canvas Controller -->
+  <script src="script.js"></script>
+</body>
+</html>

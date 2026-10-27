@@ -1,0 +1,70 @@
+/* styles.css — Tactical modern theme for ARI */
+
+:root {
+  --brand-orange: #FF5500;
+  --brand-amber: #FF9900;
+  --brand-accent: #00E599;
+  --brand-dark: #080A0D;
+  --brand-card: #0F1318;
+  --brand-border: #1F2630;
+}
+
+/* Background Radial Glow */
+.bg-radial-gradient {
+  background: radial-gradient(circle at 50% 50%, rgba(255, 85, 0, 0.12) 0%, transparent 70%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #080A0D;
+}
+::-webkit-scrollbar-thumb {
+  background: #1F2630;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF5500;
+}
+
+/* Tactical Crosshairs & Grid Patterns */
+.tactical-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(31, 38, 48, 0.4) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(31, 38, 48, 0.4) 1px, transparent 1px);
+}
+
+/* Topic Tag Selected State */
+.topic-tag.selected {
+  background-color: rgba(0, 229, 153, 0.15) !important;
+  border-color: #00E599 !important;
+  color: #00E599 !important;
+  font-weight: 600;
+}
+
+/* Smooth modal transitions */
+#infoModalOverlay.active {
+  display: flex !important;
+  opacity: 1;
+}
+
+#mobileDrawer.active {
+  display: block !important;
+}
+
+/* Subtle glow animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(255, 85, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 85, 0, 0.4);
+  }
+}
+
+.glow-active {
+  animation: pulseGlow 3s infinite;
+}
