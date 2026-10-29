@@ -150,6 +150,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const button = event.target.closest('[data-media]');
     if (button) openMedia(button.dataset.media, button);
   });
+  document.addEventListener('click', event => {
+    const pitchBtn = event.target.closest('[data-open-pitch-video]');
+    if (pitchBtn) openMedia('pitch-video', pitchBtn);
+  });
   document.querySelectorAll('[data-gallery-filter]').forEach(button => button.addEventListener('click', () => {
     galleryFilter = button.dataset.galleryFilter;
     document.querySelectorAll('[data-gallery-filter]').forEach(item => {item.classList.toggle('active', item === button); item.setAttribute('aria-pressed', String(item === button));});
