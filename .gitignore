@@ -12,3 +12,6 @@ $RECYCLE.BIN/
 
 # Logs
 *.log
+
+# Raw staging media
+galerie/
