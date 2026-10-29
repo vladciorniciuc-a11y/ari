@@ -281,3 +281,150 @@ dialog[data-variant="media"] { width:min(1000px,calc(100% - 32px)); }
   .donation-story>.caption { order:4; }
   .donation-story>.text-link { order:5; }
 }
+
+
+/* ==========================================================================
+   Section Backgrounds & WhatsApp Exclusive Channel Styling
+   ========================================================================== */
+
+/* 1. Registration Band: Codlea Mountain Forest Camp Background */
+.registration-band {
+  position: relative;
+  background-color: #0b0e13 !important;
+  background-image: 
+    linear-gradient(135deg, rgba(11, 14, 19, 0.93) 0%, rgba(13, 17, 23, 0.88) 50%, rgba(11, 14, 19, 0.96) 100%),
+    url('../images/bg-registration-forest.webp') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  border-block: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.registration form {
+  background: rgba(19, 23, 29, 0.88) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 8px !important;
+  padding: 32px !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45) !important;
+}
+
+@media (max-width: 768px) {
+  .registration form {
+    padding: 20px 16px !important;
+  }
+}
+
+/* 2. Donation / Support Band: Outdoor Range Training Ground Background */
+.donation-band {
+  position: relative;
+  background-color: #0b0e13 !important;
+  background-image: 
+    linear-gradient(180deg, rgba(11, 14, 19, 0.94) 0%, rgba(13, 17, 23, 0.89) 50%, rgba(11, 14, 19, 0.97) 100%),
+    url('../images/bg-support-range.webp') !important;
+  background-size: cover !important;
+  background-position: center 35% !important;
+  background-repeat: no-repeat !important;
+  border-block: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.donation-panel {
+  background: rgba(19, 23, 29, 0.90) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45) !important;
+}
+
+/* WhatsApp Exclusivity & High Visibility Styling */
+.primary-whatsapp {
+  background: #25D366 !important;
+  color: #06110a !important;
+  font-weight: 700 !important;
+  border: 1px solid #20ba5a !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.28) !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease !important;
+}
+
+.primary-whatsapp:hover,
+.primary-whatsapp:focus-visible {
+  background: #20ba5a !important;
+  color: #06110a !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.42) !important;
+}
+
+.icon-inline {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.communication-notice {
+  background: rgba(37, 211, 102, 0.08);
+  border-left: 3px solid #25D366;
+  padding: 12px 16px;
+  border-radius: 0 6px 6px 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #d1fae5;
+  margin-block: 16px;
+}
+
+.communication-notice strong {
+  color: #ffffff;
+}
+
+.contact-box {
+  background: rgba(19, 23, 29, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 48px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .contact-box {
+    padding: 28px 20px;
+  }
+}
+
+.contact-alert {
+  background: rgba(37, 211, 102, 0.07);
+  border: 1px solid rgba(37, 211, 102, 0.3);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-block: 24px;
+}
+
+.contact-alert-badge {
+  display: inline-block;
+  background: #25D366;
+  color: #06110a;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  padding: 4px 10px;
+  border-radius: 3px;
+  margin-bottom: 12px;
+}
+
+.contact-alert p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #e6edf3;
+}
+
+.contact-alert strong {
+  color: #25D366;
+}

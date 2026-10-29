@@ -288,8 +288,7 @@
 <dd>Sprijin pentru logistică, comunicare și resursele necesare activităților.</dd>
 </div>
 </dl>
-<a class="text-link" href="mailto:contact@ariromania.ro?subject=Colaborare%20ARI">Discută cu organizatorii <span aria-hidden="true">↗</span>
-</a>
+<a class="text-link" href="https://wa.me/40753137728?text=Bun%C4%83%20ziua!%20A%C8%99%20dori%20s%C4%83%20discut%20cu%20organizatorii%20ARI%20despre%20o%20colaborare." target="_blank" rel="noopener noreferrer">Discută pe WhatsApp cu organizatorii <span aria-hidden="true">↗</span></a>
 </div>
 </section>
 
@@ -325,49 +324,50 @@
 <p class="eyebrow">04 / PARTICIPĂ</p>
 <h2>Primul pas?<br>Spune-ne că vii.</h2>
 <p>Completează cererea pentru LANDNAV Codlea, 8–9 noiembrie. Organizatorii îți vor confirma disponibilitatea și detaliile participării.</p>
-<p>După completare, alegi WhatsApp sau e-mail și trimiți tu mesajul pregătit. Completarea formularului nu rezervă automat un loc.</p>
-<a class="text-link" href="https://wa.me/40753137728?text=Bun%C4%83!%20A%C8%99%20dori%20detalii%20despre%20LANDNAV%20Codlea%2C%208%E2%80%939%20noiembrie." target="_blank" rel="noopener noreferrer">Ai întrebări? Scrie pe WhatsApp <span aria-hidden="true">↗</span>
-</a>
+<div class="communication-notice">
+<strong>Canal exclusiv WhatsApp:</strong> Toată comunicarea, detaliile operaționale și confirmarea locurilor se realizează <strong>exclusiv pe WhatsApp (+40 753 137 728)</strong>. Nu folosim și nu răspundem pe e-mail.
+</div>
+<a class="text-link" href="https://wa.me/40753137728?text=Bun%C4%83!%20A%C8%99%20dori%20detalii%20despre%20LANDNAV%20Codlea%2C%208%E2%80%939%20noiembrie." target="_blank" rel="noopener noreferrer">Ai întrebări? Scrie direct pe WhatsApp <span aria-hidden="true">↗</span></a>
 </div>
 <form id="registration-form">
 <div class="form-grid">
-<label>Nume și prenume<input name="name" autocomplete="name" required maxlength="100">
+<label>Nume și prenume<input name="name" autocomplete="name" required maxlength="100" placeholder="ex. Vlad Ionescu">
 </label>
-<label>Localitate<input name="city" autocomplete="address-level2" required maxlength="100">
+<label>Localitate<input name="city" autocomplete="address-level2" required maxlength="100" placeholder="ex. Brașov, București">
 </label>
-<label>Adresă de e-mail <span class="optional">(opțional)</span><input name="email" type="email" autocomplete="email" maxlength="150">
+<label>Număr WhatsApp<input name="phone" type="tel" autocomplete="tel" required maxlength="30" pattern="[+0-9 ()\-]{7,30}" placeholder="+40 7xx xxx xxx">
 </label>
-<label>Telefon<input name="phone" type="tel" autocomplete="tel" required maxlength="30" pattern="[+0-9 ()\-]{7,30}">
-</label>
-</div>
-<label>Experiență de orientare<select name="experience" required>
+<label>Experiență orientare / teren<select name="experience" required>
 <option value="">Alege o variantă</option>
 <option>Prima experiență</option>
 <option>Am participat ocazional</option>
 <option>Am experiență în teren</option>
 </select>
 </label>
+</div>
 <label>Întrebări pentru organizatori <span class="optional">(opțional)</span>
-<textarea name="message" rows="3" maxlength="1000">
+<textarea name="message" rows="3" maxlength="1000" placeholder="Mențiuni medicale, echipament de care dispui sau întrebări...">
 </textarea>
 </label>
 <label class="check">
 <input type="checkbox" required>
-<span>Am înțeles că solicitarea se trimite prin canalul ales și că participarea trebuie confirmată de organizatori.</span>
+<span>Am înțeles că solicitarea se transmite și se confirmă exclusiv pe WhatsApp (+40 753 137 728). Nu se folosește e-mail.</span>
 </label>
-<p class="caption">Datele formularului nu sunt salvate. Deschiderea WhatsApp transmite mesajul pregătit către acest serviciu; ARI îl primește după ce îl trimiți. <button class="inline-link" type="button" data-info="privacy">Despre datele tale</button>
+<p class="caption">Datele din formular nu sunt stocate pe servere. La trimitere, mesajul se deschide direct în aplicația WhatsApp pe telefonul sau calculatorul tău, gata de trimitere către ARI (+40 753 137 728). <button class="inline-link" type="button" data-info="privacy">Despre datele tale</button>
 </p>
 <button class="button" type="submit">Pregătește cererea <span aria-hidden="true">↗</span>
 </button>
 <div id="request-preview" hidden aria-live="polite">
-<h3>Cererea este pregătită</h3>
-<p>Verifică mesajul și alege cum îl trimiți. Înscrierea va fi confirmată de ARI.</p>
+<h3>Cererea ta este gata de trimitere</h3>
+<p>Verifică mesajul și apasă butonul WhatsApp pentru a trimite cererea către instructorii ARI (+40 753 137 728):</p>
 <pre id="request-text">
 </pre>
 <div class="actions">
-<a id="send-whatsapp" class="button" target="_blank" rel="noopener noreferrer">Deschide WhatsApp</a>
-<a id="send-email" class="button secondary">Deschide e-mail</a>
-<button id="copy-request" class="text-link" type="button">Copiază mesajul</button>
+<a id="send-whatsapp" class="button primary-whatsapp" target="_blank" rel="noopener noreferrer">
+  <svg class="icon-inline" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/></svg>
+  Trimite cererea pe WhatsApp
+</a>
+<button id="copy-request" class="button secondary" type="button">Copiază mesajul</button>
 </div>
 <p id="copy-status" role="status">
 </p>
@@ -479,14 +479,14 @@
 <li>Discutăm nevoile și proiectul potrivit.</li>
 <li>Solicită documentele și condițiile colaborării.</li>
 </ul>
-<a class="button" href="mailto:contact@ariromania.ro?subject=Sponsorizare%20ARI&body=Bun%C4%83%20ziua%2C%0A%0ACompania%3A%20%0APersoana%20de%20contact%3A%20%0ATipul%20sprijinului%3A%20%0AProiectul%20vizat%3A%20%0A%0AV%C4%83%20rog%20s%C4%83%20ne%20transmite%C8%9Bi%20necesarul%20%C8%99i%20documentele%20pentru%20colaborare.">Discută o sponsorizare ↗</a>
-<p class="caption">Pentru condițiile fiscale aplicabile companiei tale, consultă persoana care se ocupă de contabilitate.</p>
+<a class="button primary-whatsapp" href="https://wa.me/40753137728?text=Bun%C4%83%20ziua!%20Reprezint%20o%20companie%20%C8%99i%20a%C8%99%20dori%20s%C4%83%20discut%C4%83m%20pe%20WhatsApp%20despre%20o%20sponsorizare%20%2F%20parteneriat%20cu%20ARI.%0A%0ACompania%3A%20%0APersoana%20de%20contact%3A%20%0ATipul%20sprijinului%3A%20" target="_blank" rel="noopener noreferrer">Discută sponsorizarea pe WhatsApp ↗</a>
+<p class="caption">Toată comunicarea de parteneriat se desfășoară exclusiv pe WhatsApp (+40 753 137 728). Nu folosim e-mail.</p>
 </div>
     <div id="panel-tax" role="tabpanel" aria-labelledby="tab-tax" tabindex="0" hidden>
 <p class="tax-number" aria-hidden="true">230</p>
 <h3>Solicită formularul și detaliile campaniei curente.</h3>
 <p>Dacă dorești să susții ARI prin redirecționarea a până la 3,5% din impozitul anual pe veniturile din salarii și asimilate salariilor, cere echipei formularul cu datele asociației și informațiile aplicabile situației tale.</p>
-<a class="button" href="mailto:contact@ariromania.ro?subject=Formular%20230%20ARI&body=Bun%C4%83%20ziua%2C%0A%0ADoresc%20s%C4%83%20sus%C8%9Bin%20ARI.%20V%C4%83%20rog%20s%C4%83%20%C3%AEmi%20trimite%C8%9Bi%20formularul%20230%20%C8%99i%20detaliile%20campaniei%20curente%3A%20eligibilitate%2C%20termen%20%C8%99i%20modalitate%20de%20depunere.%0A%0AMul%C8%9Bumesc!">Cere formularul ARI ↗</a>
+<a class="button primary-whatsapp" href="https://wa.me/40753137728?text=Bun%C4%83%20ziua!%20Doresc%20s%C4%83%20sus%C8%9Bin%20ARI%20prin%20redirec%C8%9Bionarea%20a%203%2C5%25%20din%20impozit%20(Formular%20230).%20V%C4%83%20rog%20s%C4%83%20%C3%AEmi%20trimite%C8%9Bi%20formularul%20%C8%99i%20detaliile%20campaniei.%20Mul%C8%9Bumesc!" target="_blank" rel="noopener noreferrer">Cere Formularul 230 pe WhatsApp ↗</a>
 <p class="caption">Eligibilitatea, termenul și modalitatea de depunere trebuie confirmate pentru anul fiscal relevant. <a href="https://static.anaf.ro/static/10/Anaf/Declaratii_R/230.html" target="_blank" rel="noopener noreferrer">Informații ANAF despre formularul 230</a>.</p>
 </div>
   </div>
@@ -497,7 +497,7 @@
 <p class="eyebrow">AI ȘI ALTE MODURI DE A AJUTA</p>
 <h2>Timp. Experiență.<br>Idei pentru comunitate.</h2>
 <p>Poți contribui la logistică, comunicare sau pregătirea activităților. Spune-ne ce experiență ai și unde ai vrea să te implici.</p>
-<a class="button secondary" href="mailto:contact@ariromania.ro?subject=Voluntariat%20ARI">Vreau să fiu voluntar ↗</a>
+<a class="button secondary" href="https://wa.me/40753137728?text=Bun%C4%83%20ziua!%20A%C8%99%20dori%20s%C4%83%20m%C4%83%20al%C4%83tur%20ca%20voluntar%20ARI.%0A%0ANume%3A%20%0AExperien%C8%9Ba%20mea%3A%20%0ADomeniu%20(logistic%C4%83%20%2F%20medical%20%2F%20promovare%20%2F%20teren)%3A%20" target="_blank" rel="noopener noreferrer">Vreau să fiu voluntar (WhatsApp) ↗</a>
 </div>
 <form id="topic-form">
 <h3>Ce ai vrea să înveți la următorul atelier?</h3>
@@ -527,8 +527,7 @@
 <pre id="topic-message">
 </pre>
 <div class="actions">
-<a class="text-link" id="topic-whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
-<a class="text-link" id="topic-email">E-mail ↗</a>
+<a class="button primary-whatsapp" id="topic-whatsapp" target="_blank" rel="noopener noreferrer">Trimite propunerea pe WhatsApp</a>
 </div>
 </div>
 </form>
@@ -550,7 +549,7 @@
 </details>
 <details>
 <summary>Înscrierea este confirmată imediat?</summary>
-<p>Nu. Formularul pregătește o cerere pe care o trimiți prin WhatsApp sau e-mail. Echipa ARI confirmă disponibilitatea și condițiile participării.</p>
+<p>Nu. Formularul pregătește o cerere pe care o trimiți <strong>exclusiv pe WhatsApp (+40 753 137 728)</strong>. <em>Nu folosim și nu verificăm e-mailul pentru înscrieri sau întrebări</em>, pentru a asigura operativitate maximă. Echipa ARI confirmă disponibilitatea locului și detaliile participării pe WhatsApp.</p>
 </details>
 <details>
 <summary>Trebuie să donez ca să particip?</summary>
@@ -563,17 +562,25 @@
 <details>
 <summary>Unde ajung banii și cum aflu mai multe?</summary>
 <p>Transferul se face în contul Asociației Active Resilience Initiative. Pagina oficială menționează materiale educaționale, echipamente, transport, logistică și organizare. Pentru documente sau utilizarea într-un proiect anume, contactează echipa.</p>
-<a href="mailto:contact@ariromania.ro?subject=Informa%C8%9Bii%20despre%20sus%C8%9Binerea%20ARI" class="text-link">Cere detalii despre susținere ↗</a>
+<a href="https://wa.me/40753137728?text=Bun%C4%83%20ziua!%20A%C8%99%20dori%20mai%20multe%20informa%C8%9Bii%20despre%20cum%20pot%20sus%C8%9Bine%20activit%C4%83%C8%9Bile%20ARI." target="_blank" rel="noopener noreferrer" class="text-link">Cere detalii pe WhatsApp (+40 753 137 728) ↗</a>
 </details>
 </div>
 </section>
 <section class="contact wrap" id="contact">
-<p class="eyebrow">RĂMÂNEM ÎN LEGĂTURĂ</p>
-<h2>Ai o întrebare sau o idee?</h2>
+<div class="contact-box">
+<p class="eyebrow">CANAL EXCLUSIV DE COMUNICARE</p>
+<h2>Ai o întrebare, o idee sau vrei să colaborăm?</h2>
+<div class="contact-alert">
+<span class="contact-alert-badge">EXCLUSIV WHATSAPP</span>
+<p>Toată comunicarea ARI — înscrieri la ateliere, parteneriate, sponsorizări de la companii, întrebări de presă sau voluntariat — se desfășoară <strong>strict pe WhatsApp</strong> la numărul oficial <strong>+40 753 137 728</strong>. <em>Nu folosim adresă de e-mail</em> pentru a asigura un dialog operativ și direct cu echipa noastră din teren.</p>
+</div>
 <div class="actions">
-<a class="button" href="mailto:contact@ariromania.ro">contact@ariromania.ro ↗</a>
-<a class="text-link" href="https://wa.me/40753137728" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
-<a class="text-link" href="https://www.facebook.com/profile.php?id=61577849437974" target="_blank" rel="noopener noreferrer">Facebook ARI ↗</a>
+<a class="button primary-whatsapp" href="https://wa.me/40753137728" target="_blank" rel="noopener noreferrer">
+  <svg class="icon-inline" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/></svg>
+  Scrie-ne pe WhatsApp: +40 753 137 728
+</a>
+<a class="button secondary" href="https://www.facebook.com/profile.php?id=61577849437974" target="_blank" rel="noopener noreferrer">Urmărește pagina Facebook ↗</a>
+</div>
 </div>
 </section>
 </main>

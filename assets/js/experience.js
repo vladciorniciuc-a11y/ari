@@ -237,10 +237,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const city = String(data.get('city') || '').trim();
     if (!topics.length && !idea) {$('#topic-error').hidden = false;topicForm.querySelector('input[name="topic"]').focus();return;}
     if (!city) {topicForm.elements.city.setCustomValidity('Completează localitatea.');topicForm.elements.city.reportValidity();return;}
-    const message = `Bună! Aș dori să propun un atelier ARI.\nLocalitate: ${city}\nSubiecte: ${[...topics, idea].filter(Boolean).join(', ')}\nVă rog să îmi spuneți dacă aceste teme pot fi incluse într-o ediție viitoare.`;
+    const message = `Bună! Aș dori să propun un atelier ARI.\nLocalitate: ${city}\nSubiecte dorite: ${[...topics, idea].filter(Boolean).join(', ')}\n\nVă rog să îmi spuneți dacă aceste teme pot fi incluse într-o ediție viitoare.`;
     $('#topic-message').textContent = message;
     $('#topic-whatsapp').href = 'https://wa.me/40753137728?text=' + encodeURIComponent(message);
-    $('#topic-email').href = 'mailto:contact@ariromania.ro?subject=Propunere%20atelier%20ARI&body=' + encodeURIComponent(message);
     $('#topic-preview').hidden = false;
   });
   topicForm.addEventListener('input', () => {$('#topic-preview').hidden = true;$('#topic-error').hidden = true;topicForm.elements.city.setCustomValidity('');});
