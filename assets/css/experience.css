@@ -441,3 +441,22 @@ dialog[data-variant="media"] { width:min(1000px,calc(100% - 32px)); }
   color: #9da7b3;
   font-family: var(--font-mono);
 }
+
+
+/* 9:16 Portrait Lightbox Styling */
+dialog[data-variant="media"][data-orientation="portrait"] {
+  width: min(440px, calc(100% - 32px));
+  max-width: 440px;
+}
+
+dialog[data-variant="media"][data-orientation="portrait"] video,
+dialog[data-variant="media"] video.video-portrait {
+  max-height: 66dvh;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #000;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+  margin-inline: auto;
+  display: block;
+}

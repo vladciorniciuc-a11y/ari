@@ -39,7 +39,7 @@
     const box = dialog.getBoundingClientRect();
     if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close();
   });
-  dialog.addEventListener('close', () => { document.body.classList.remove('modal-open'); dialog.querySelectorAll('video').forEach(video => video.pause()); opener?.focus({preventScroll:true}); });
+  dialog.addEventListener('close', () => { document.body.classList.remove('modal-open'); delete dialog.dataset.orientation; dialog.querySelectorAll('video').forEach(video => video.pause()); opener?.focus({preventScroll:true}); });
   document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => {
     document.querySelectorAll('[data-filter]').forEach(item => {item.classList.toggle('active', item === button);item.setAttribute('aria-pressed', String(item === button));});
     render(button.dataset.filter);

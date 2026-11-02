@@ -142,8 +142,14 @@ document.addEventListener('DOMContentLoaded', () => {
     mediaIndex = items.findIndex(item => item.id === id);
     if (mediaIndex < 0) return;
     const item = items[mediaIndex];
-    const media = !item.src ? `<div class="lightbox-placeholder">${placeholder(item)}<p>Materialul va fi adăugat aici.</p></div>` : item.type === 'video' ? `<video controls playsinline preload="metadata"${item.poster ? ` poster="${escape(item.poster)}"` : ''} src="${escape(item.src)}" aria-label="${escape(item.title)}">Browserul nu poate reda acest video.</video><p class="media-error" role="status" hidden>Materialul nu a putut fi încărcat. Încearcă din nou mai târziu.</p>` : `<img class="lightbox-image" src="${escape(item.src)}" alt="${escape(item.alt)}">`;
+    const isPortrait = item.aspect === '9:16' || item.id.includes('9x16');
+    const media = !item.src ? `<div class="lightbox-placeholder">${placeholder(item)}<p>Materialul va fi adăugat aici.</p></div>` : item.type === 'video' ? `<video controls playsinline preload="metadata"${item.poster ? ` poster="${escape(item.poster)}"` : ''} src="${escape(item.src)}" class="${isPortrait ? 'video-portrait' : ''}" aria-label="${escape(item.title)}">Browserul nu poate reda acest video.</video><p class="media-error" role="status" hidden>Materialul nu a putut fi încărcat. Încearcă din nou mai târziu.</p>` : `<img class="lightbox-image" src="${escape(item.src)}" alt="${escape(item.alt)}">`;
     openDialog(`<div class="media-heading"><p class="eyebrow">${escape(item.label)}</p><h2 id="dialog-title">${escape(item.title)}</h2></div>${media}<p class="media-description">${escape(item.description)}</p><div class="lightbox-controls"><button class="button secondary" type="button" data-media-step="-1" aria-label="Materialul anterior">← Înapoi</button><span aria-live="polite">${mediaIndex + 1} / ${items.length}</span><button class="button secondary" type="button" data-media-step="1" aria-label="Materialul următor">Înainte →</button></div>`, source, 'media');
+    if (isPortrait) {
+      dialog.dataset.orientation = 'portrait';
+    } else {
+      delete dialog.dataset.orientation;
+    }
     dialog.querySelector('video')?.addEventListener('error', () => {dialog.querySelector('.media-error').hidden = false;});
   }
   $('#gallery-grid').addEventListener('click', event => {
@@ -152,7 +158,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   document.addEventListener('click', event => {
     const pitchBtn = event.target.closest('[data-open-pitch-video]');
-    if (pitchBtn) openMedia('pitch-video', pitchBtn);
+    if (pitchBtn) openMedia('pitch-video-16x9', pitchBtn);
+    const pitch9Btn = event.target.closest('[data-open-pitch-9x16]');
+    if (pitch9Btn) openMedia('pitch-video-9x16', pitch9Btn);
   });
   document.querySelectorAll('[data-gallery-filter]').forEach(button => button.addEventListener('click', () => {
     galleryFilter = button.dataset.galleryFilter;

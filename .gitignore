@@ -15,3 +15,7 @@ $RECYCLE.BIN/
 
 # Raw staging media
 galerie/
+
+# Root loose reference downloads
+/*.mp4
+
